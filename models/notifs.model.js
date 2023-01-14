@@ -4,7 +4,7 @@ const notifs = mongoose.model(
     "notifs",
     new mongoose.Schema({
         id_user:{
-            type:Number,
+            type:String,
             required:true
         },
         message:{
