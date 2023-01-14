@@ -15,6 +15,10 @@ const notifs = mongoose.model(
             type: Date,
             required: true
         },
+        seen:{
+            type: Boolean,
+            required: true
+        },
         route:{
             type:String
         }
