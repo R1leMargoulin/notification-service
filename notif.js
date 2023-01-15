@@ -39,6 +39,18 @@ app.get("/notifs/:id_user", (req,res)=>{
         })
 });
 
+app.put("/notifs/seen/:id_user", (req,res)=>{
+    var id_user = req.params.id_user;
+    console.log(id_user)
+    db.notifs.updateMany({id_user:id_user}, {$set:{seen:true}}).then(()=>{
+         res.status(200).json("ok");
+      
+     }).catch(err => {
+        console.log(err)
+     });
+   
+});
+
 app.post("/notifs/send", (req,res)=>{
     console.log(req.body)
     var newNotif = new Object()
